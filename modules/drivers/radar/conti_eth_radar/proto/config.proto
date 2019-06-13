@@ -1,0 +1,12 @@
+syntax = "proto2";
+
+package apollo.drivers.conti_eth_radar;
+
+import "modules/drivers/radar/conti_eth_radar/proto/conti_eth_radar.proto";
+
+message ContiEthRadarConfig {
+	optional string frame_id = 1;
+	optional string scan_channel = 2;
+	optional Model model = 3;
+	required uint32 source_port = 4 [default = 31122];
+}

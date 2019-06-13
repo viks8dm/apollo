@@ -1,0 +1,4 @@
+frame_id: "conti_ars430"
+scan_channel: "apollo/sensor/radar/conti_eth_radar/ContiEthRadarScan"
+model: ARS430
+source_port: 31122

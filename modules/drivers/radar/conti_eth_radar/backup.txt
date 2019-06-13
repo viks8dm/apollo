@@ -1,0 +1,52 @@
+// // parameters for ARS430
+// static const size_t UDP_PAYLOAD_TX_SENSOR_STATUS = 113;
+// static const size_t UDP_PAYLOAD_TX_RDI_FAR0 = 1112;
+// static const size_t UDP_PAYLOAD_TX_RDI_FAR1 = 1112;
+// static const size_t UDP_PAYLOAD_TX_RDI_NEAR0 = 1112;
+// static const size_t UDP_PAYLOAD_TX_RDI_NEAR1 = 1112;
+// static const size_t UDP_PAYLOAD_TX_RDI_NEAR2 = 944;
+//
+// static const size_t UDA_RX_ETH_CFG = 22;
+// static const size_t UDP_RX_SENSOR_CFG = 6;
+//
+// static const int SRV_ID_SENSOR_STATUS = 200;
+// static const int SRV_ID_RDI = 220;
+//
+// static const unsigned int HEADER_ID_SENSOR_STATUS = 13107200;
+// static const unsigned int HEADER_ID_RDI_FAR0 = 14417921;
+// static const unsigned int HEADER_ID_RDI_FAR1 = 14417922;
+// static const unsigned int HEADER_ID_RDI_NEAR0 = 14417923;
+// static const unsigned int HEADER_ID_RDI_NEAR1 = 14417924;
+// static const unsigned int HEADER_ID_RDI_NEAR2 = 14417925;
+
+
+
+
+===============================================
+driver BUILD
+
+"//modules/drivers/radar/conti_eth_radar/driver",
+
+
+
+cc_library(
+    name = "driver",
+    srcs = [
+        "driver.cc",
+        "socket_input.cc",
+    ],
+    hdrs = [
+        "driver.h",
+        "input.h",
+        "socket_input.h",
+    ],
+    copts = ['-DMODULE_NAME=\\"conti_eth_radar\\"'],
+    linkopts = [
+        "-lpcap",
+    ],
+    deps = [
+        "//cyber",
+        "//modules/common/util",
+        "//modules/drivers/radar/conti_eth_radar/proto:conti_eth_radar_proto",
+    ],
+)

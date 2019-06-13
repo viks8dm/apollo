@@ -1,0 +1,10 @@
+module_config {
+    module_library : "/apollo/bazel-bin/modules/drivers/radar/conti_eth_radar/driver/libconti_eth_radar_driver_component.so"
+    components {
+        class_name : "ContiEthRadarDriverComponent"
+        config {
+            name: "conti_eth_radar"
+            config_file_path:  "/apollo/modules/drivers/radar/conti_eth_radar/conf/conti_eth_radar_conf.pb.txt"
+        }
+    }
+}

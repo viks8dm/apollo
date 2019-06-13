@@ -1,0 +1,23 @@
+syntax = "proto2";
+
+package apollo.drivers.conti_eth_radar;
+
+import "modules/common/proto/header.proto";
+
+enum Model {
+	UNKOWN = 0;
+	ARS430 = 1;
+}
+
+message ContiRDI_Packet {
+	optional uint64 stamp = 1;
+	optional bytes data = 2;
+}
+
+
+message ContiEthRadarScan {
+	optional apollo.common.Header header = 1;
+	optional Model model = 2;  // conti radar model
+
+	repeated ContiRDI_Packet rdi_pkt = 3;
+}
