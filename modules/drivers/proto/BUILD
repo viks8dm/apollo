@@ -13,6 +13,7 @@ proto_library(
     name = "sensor_proto_lib",
     srcs = [
         "conti_radar.proto",
+        "conti_rdi_radar.proto",
         "delphi_esr.proto",
         "mobileye.proto",
         "pointcloud.proto",
